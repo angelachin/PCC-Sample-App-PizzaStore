@@ -17,6 +17,7 @@ package io.pivotal.cloudcache.app;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.gemfire.config.annotation.ClientCacheApplication;
+import org.springframework.data.gemfire.config.annotation.EnableSecurity;
 
 /**
  * This class runs the sample pizza store application.
@@ -32,8 +33,9 @@ import org.springframework.data.gemfire.config.annotation.ClientCacheApplication
  *
  */
 @SpringBootApplication
+@EnableSecurity
 @ClientCacheApplication(
-    locators = {@ClientCacheApplication.Locator(port = 55221, host = "0e3102ae-f5c0-4d81-9c14-9dafdeda5f1f.locator-server.lima-services-subnet.service-instance-27436229-a98b-47d9-a390-9ddb6a94cb23.bosh")})
+    locators = {@ClientCacheApplication.Locator(port = 55221, host = "ffe8fc05-152d-4a4b-852b-1fd820bb68a9.locator.lima-services-subnet.service-instance-60bce0c4-e27d-445b-bcc2-226b0783e2d1.bosh")})
 public class CloudcachePizzaStoreApplication {
 
     public static void main(String[] args) {

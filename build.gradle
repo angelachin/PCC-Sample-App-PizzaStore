@@ -59,10 +59,9 @@ dependencies {
 		exclude module: 'spring-boot-starter-logging'
 	}
 
-	compile ("org.springframework.geode:spring-geode-starter:$springBootDataGemFireVersion"){
-		exclude module: 'spring-data-gemfire'
+	compile ("org.springframework.geode:spring-geode-starter:$springBootDataGeodeVersion"){
+		exclude group: "org.apache.logging.log4j", module: "log4j-slf4j-impl"
 	}
-	compile ("org.apache.logging.log4j:log4j-slf4j-impl:2.11.1")
 
 	runtime "com.h2database:h2:1.4.197"
 	runtime "org.slf4j:jcl-over-slf4j:1.7.25"
@@ -72,8 +71,6 @@ dependencies {
 	testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion"){
 		exclude module: 'spring-boot-starter-logging'
 	}
-
-	compile ("org.springframework.data:spring-data-geode:$springDataGemFireVersion")
 
 	testCompile("com.github.stefanbirkner:system-rules:1.17.1")
 
